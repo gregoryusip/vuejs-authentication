@@ -25,22 +25,24 @@
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Nav",
 
-  props: ["user"],
+  // props: ["user"],
 
   methods: {
     handleClick() {
       localStorage.removeItem("token");
 
+      this.$store.dispatch("user", null);
+
       this.$router.push("/login");
     },
   },
-  // computed: {
-  //   ...mapGetters(["user"]),
-  // },
+  computed: {
+    ...mapGetters(["user"]),
+  },
 };
 </script>

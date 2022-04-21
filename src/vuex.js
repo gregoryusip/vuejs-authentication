@@ -7,7 +7,7 @@ const state = {
   user: null,
 };
 
-const store = new Vuex({
+const store = new Vuex.Store({
   state,
   getters: {
     user: (state) => {
